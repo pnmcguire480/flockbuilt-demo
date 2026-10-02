@@ -1,0 +1,5 @@
+---
+import { url } from '../lib/path';
+const cells = Array.from({length: 24}, (_, i) => { const col = i % 8; const row = Math.floor(i / 8); return {x: col * 128 + 65, y: row * 115 + (col % 2) * 57 + 65}; });
+---
+<svg class="hex-wall" viewBox="0 0 1050 440" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="2">{cells.map(({x,y}) => <path class="hex-cell" d={`M${x-50},${y-29} L${x},${y-58} L${x+50},${y-29} L${x+50},${y+29} L${x},${y+58} L${x-50},${y+29} Z`}/>)}</g></svg>

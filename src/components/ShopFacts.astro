@@ -1,0 +1,5 @@
+---
+import { url } from '../lib/path';
+import site from '../content/site.json';
+---
+<section class="section shop-facts"><div><span class="eyebrow">THE SHOP / TAMPA, FL</span><h2>Find your way<br/>to Flock Built.</h2><p>{site.street}<br/>{site.unit}<br/>{site.city}, {site.region} {site.postalCode}</p><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=6209%20N%2050th%20St%20Tampa%20FL%2033610" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a><p class="caption">Gated lot. Call or text for gate access before you arrive. The exact unit and map pin are awaiting confirmation.</p></div><dl><div><dt>PHONE / TEXT</dt><dd><a href="tel:+18132403815">{site.phoneDisplay}</a></dd></div><div><dt>SHOP HOURS</dt><dd class="fill-in">{site.hours}</dd></div><div><dt>ARRIVAL</dt><dd>{site.arrival}</dd></div><div><dt>DIAGNOSTIC FEES</dt><dd class="fill-in">{site.diagnosticFee}</dd></div><div><dt>PAYMENT METHODS</dt><dd class="fill-in">{site.paymentMethods}</dd></div><div><dt>SERVICE AREA</dt><dd class="fill-in">{site.serviceArea}</dd></div></dl></section>

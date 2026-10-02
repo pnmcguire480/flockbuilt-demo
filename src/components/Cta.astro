@@ -1,0 +1,5 @@
+---
+import { url } from '../lib/path';
+const { service = 'repair' } = Astro.props;
+---
+<section class="cta-block section"><span class="eyebrow">LET’S GET YOU MOVING</span><h2>YOUR RIDE.<br/><span>OUR PASSION.</span></h2><p>Call or text, then come by for your free estimate.</p><div class="actions"><a class="button" href="tel:+18132403815">Call 813-240-3815 <span aria-hidden="true">↗</span></a><a class="button button--outline" href={url(`/contact/?service=${service}`)}>Get an estimate <span aria-hidden="true">↗</span></a></div><p class="caption">Appointments recommended — call ahead for gate access.</p></section>

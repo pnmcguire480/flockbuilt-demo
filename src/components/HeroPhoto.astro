@@ -1,0 +1,5 @@
+---
+import { url } from '../lib/path';
+import Photo from './Photo.astro';
+---
+<div class="hero-photo" aria-hidden="true">{[0,1,2,3].map(i=><div class={`hero-strip hero-strip--${i+1}`}><Photo kind="bay" alt="" eager/></div>)}</div>

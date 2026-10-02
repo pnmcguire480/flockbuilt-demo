@@ -1,0 +1,11 @@
+---
+import { url } from '../lib/path';
+import { Image } from 'astro:assets';
+import bay from '../../assets/eg-civic-engine-bay.jpg';
+import exterior from '../../assets/eg-civic-exterior.jpg';
+import before from '../../assets/eg-civic-teardown.jpg';
+import shop from '../../assets/flock-shop-banner.jpg';
+const photos = { bay, exterior, before, shop };
+const { kind = 'bay', alt, eager = false, class: className = '' } = Astro.props;
+---
+<Image src={photos[kind as keyof typeof photos]} alt={alt} widths={[480, 800, 1080]} sizes="(max-width: 767px) 100vw, 60vw" format="webp" quality={75} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} class={className}/>

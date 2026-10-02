@@ -1,0 +1,5 @@
+---
+import { url } from '../lib/path';
+const { items } = Astro.props;
+---
+<section class="section faq"><div class="section-top"><span class="eyebrow">GOOD TO KNOW</span><h2>Before you pull up.</h2></div><div>{items.map(([q,a]:string[]) => <details><summary>{q}<span aria-hidden="true">+</span></summary><p>{a}</p></details>)}</div></section>

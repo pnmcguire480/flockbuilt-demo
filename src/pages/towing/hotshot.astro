@@ -1,0 +1,11 @@
+---
+import { url } from '../../lib/path';
+import Base from '../../layouts/Base.astro';
+import Cta from '../../components/Cta.astro';
+import Faq from '../../components/Faq.astro';
+---
+<Base title="Hotshot Delivery & Expedited Transport in Tampa" description="Small loads and expedited hotshot shipments from Flock Built Performance in Tampa. Discuss your load, pickup, destination and preferred timing." path="/towing/hotshot/" service="hotshot">
+<section class="page-hero section"><div class="breadcrumbs"><a href={url("/")}>Home</a><span>/</span><a href={url("/towing/")}>Towing</a><span>/</span>Hotshot</div><span class="eyebrow">THE ROAD / SMALL LOADS & EXPEDITED SHIPMENTS</span><h1>Hotshot Delivery<br/>in Tampa, FL</h1><p class="page-display">YOUR LOAD.<br/><span>OUR PRIORITY.</span></p><p>Move it. Deliver it. On time. Tell us what needs moving, the route and your preferred timing.</p><a class="button" href={url("/contact/?service=hotshot")}>Request a hotshot estimate ↗</a></section>
+<section class="section three-grid steps"><article><span>01</span><h3>The load.</h3><p>Send a description, weight, dimensions and photos. Equipment limits are confirmed by the shop.</p></article><article><span>02</span><h3>The route.</h3><p>Share pickup, destination and site access requirements.</p></article><article><span>03</span><h3>The timing.</h3><p>Tell us your preferred window. The shop confirms availability and arrangements before booking.</p></article></section>
+<Faq items={[["Do you offer long-distance deliveries?","Local and long-distance hauling are offered. Discuss the route with the shop to confirm coverage and availability."],["What can you carry?","Small loads and expedited shipments are offered. The load’s weight, dimensions and handling needs must be reviewed against the rig’s capacity."],["Can the website confirm a pickup?","A quote request starts a conversation. A pickup is confirmed directly with the shop; the demo does not dispatch or book a truck."]]}/><Cta service="hotshot"/>
+</Base>

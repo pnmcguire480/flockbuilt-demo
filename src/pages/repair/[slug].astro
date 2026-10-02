@@ -1,0 +1,15 @@
+---
+import { url } from '../../lib/path';
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import Cta from '../../components/Cta.astro';
+import Faq from '../../components/Faq.astro';
+import { services } from '../../content/services';
+export function getStaticPaths() { return services.map(service=>({params:{slug:service.slug},props:{service}})); }
+const { service } = Astro.props;
+---
+<Base title={`${service.name} in Tampa, FL`} description={service.description} path={`/repair/${service.slug}/`} service={service.slug}>
+<section class="page-hero section"><div class="breadcrumbs"><a href={url("/")}>Home</a><span>/</span><a href={url("/repair/")}>Repair</a><span>/</span>{service.short}</div><span class="eyebrow">THE SHOP / {service.short.toUpperCase()}</span><h1>{service.name}<br/>in Tampa, FL</h1><p class="page-display">{service.display.split('\n')[0]}<br/><span>{service.display.split('\n')[1]}</span></p><p>{service.intro}</p><a class="button" href={url(`/contact/?service=${service.slug}`)}>Request an estimate ↗</a></section>
+<section class="section two-grid"><div><span class="eyebrow">TALK IT THROUGH WITH THE SHOP</span><h2>Your vehicle.<br/>Your next step.</h2><ul class="check-list">{service.items.map(item=><li>{item}</li>)}</ul><p>Send the year, make and model, your symptoms or goals, and photos if you have them. The shop will confirm service coverage, parts, price and availability.</p><p class="fill-in">Client fill-in: approved job examples, vehicle/engine coverage and any starting price or diagnostic fee.</p><p>Serving Tampa from 6209 N 50th St. Appointments recommended — call ahead for gate access.</p></div><div><Photo kind={service.slug==='engine-swaps'?'bay':'shop'} alt={service.slug==='engine-swaps'?'Completed Civic engine bay from the Flock Built showcase':'Flock Built Performance shop interior'} eager/><p class="caption">Real Flock Built reference photo. Service-specific job photos can be added after client approval.</p></div></section>
+<Faq items={service.faq}/><section class="section related-build"><span class="eyebrow">MORE FROM THE SHOP</span><h2>See the Civic. Meet the crew.</h2><div class="actions"><a class="button button--outline" href={url("/builds/civic-eg/")}>Civic EG build ↗</a><a class="button button--outline" href={url("/about/")}>The crew ↗</a><a class="button button--outline" href={url("/repair/")}>All services ↗</a></div></section><Cta service={service.slug}/>
+</Base>

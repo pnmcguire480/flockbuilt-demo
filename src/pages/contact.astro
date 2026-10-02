@@ -1,0 +1,11 @@
+---
+import { url } from '../lib/path';
+import Base from '../layouts/Base.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import ShopFacts from '../components/ShopFacts.astro';
+import Faq from '../components/Faq.astro';
+---
+<Base title="Contact Flock Built Performance & Request an Estimate" description="Call or text 813-240-3815 for Flock Built Performance in Tampa. Request an auto repair, swap or transport estimate. Call ahead for gate access." path="/contact/">
+<section class="page-hero section contact-hero"><div class="breadcrumbs"><a href={url("/")}>Home</a><span>/</span>Get an estimate</div><span class="eyebrow">THE NEXT STEP / LET’S TALK</span><h1>Contact Flock Built Performance<br/>in Tampa, FL</h1><p class="page-display">WHAT’S YOUR<br/><span>RIDE NEED?</span></p><div class="contact-links"><a href="tel:+18132403815"><span class="eyebrow">CALL THE SHOP</span>813-240-3815 <span aria-hidden="true">↗</span></a><a href="sms:+18132403815"><span class="eyebrow">SEND A TEXT</span>Let’s talk <span aria-hidden="true">↗</span></a><a href="https://www.instagram.com/flockbuiltperformance_813/" target="_blank" rel="noopener"><span class="eyebrow">INSTAGRAM</span>Message the shop <span aria-hidden="true">↗</span></a></div><p class="caption">These links use the confirmed business contact details. Opening them is your choice; submitting the demo form sends nothing to the shop.</p></section>
+<QuoteForm/><ShopFacts/><Faq items={[["Does this demo send my request?","No. It validates your details and creates a sample receipt locally. Nothing reaches the shop, and no appointment or payment is made."],["How do I get gate access?","Appointments are recommended. Call or text before you come by for the unit and gate instructions."],["Is towing available after hours?","24-hour towing is offered. For an urgent request, call the shop to confirm availability and arrangements."]]}/>
+</Base>

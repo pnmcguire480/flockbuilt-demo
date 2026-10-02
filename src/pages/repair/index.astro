@@ -1,0 +1,16 @@
+---
+import { url } from '../../lib/path';
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import Specials from '../../components/Specials.astro';
+import Cta from '../../components/Cta.astro';
+import Faq from '../../components/Faq.astro';
+import { services } from '../../content/services';
+---
+<Base title="Auto & Diesel Repair in Tampa, FL" description="Brakes, oil changes, diagnostics, diesel repair, engine and transmission swaps at Flock Built Performance in Tampa. Request a free estimate." path="/repair/">
+<section class="page-hero section"><div class="breadcrumbs"><a href={url("/")}>Home</a><span>/</span> Repair</div><span class="eyebrow">01 / THE SHOP</span><h1>Auto & Diesel Repair<br/>in Tampa, FL</h1><p class="page-display">ANY MECHANIC<br/><span>NEED, HANDLED.</span></p><p>Quality work. Fast turnaround. Built on trust.</p><a class="button" href={url("/contact/?service=repair")}>Get a free estimate ↗</a></section>
+<section class="section two-grid repair-intro"><Photo kind="shop" alt="Inside the Flock Built Performance workshop" eager/><div><span class="eyebrow">REPAIR / MAINTENANCE / PERFORMANCE</span><h2>Let’s get<br/>under the hood.</h2><ul class="check-list">{['Brakes','Oil changes & tune-ups','Alternators & starters','CV axles','A/C work','Check-engine diagnostics','Auto & diesel repair','Motor & transmission swaps','Custom motor swaps'].map(s=><li>{s}</li>)}</ul></div></section>
+<section class="section"><div class="section-top"><span class="eyebrow">FIND YOUR SERVICE</span><h2>What does your ride need?</h2></div><div class="service-list">{services.map((s,i)=><a href={url(`/repair/${s.slug}/`)}><span class="eyebrow">0{i+1}</span><h3>{s.name}</h3><span aria-hidden="true">↗</span></a>)}</div></section>
+<section class="section"><span class="eyebrow">NO GUESSWORK / THE NEXT STEP</span><h2>From first call to the bay.</h2><div class="three-grid steps"><article><span>01</span><h3>Tell us what’s up.</h3><p>Call, text or send vehicle details and photos with your request.</p></article><article><span>02</span><h3>Talk through the work.</h3><p>Get an estimate and confirm any separate diagnostic fee before booking.</p></article><article><span>03</span><h3>Agree on a time.</h3><p>Appointments recommended. Call ahead for gate access.</p></article></div></section>
+<Specials/><Faq items={[["Can I just drive in?","Appointments are recommended. Call or text first so the shop can confirm an arrival time and gate access."],["Is the estimate free?","Yes. Any separate diagnostic fee and the scope of work need to be confirmed before work begins."],["Do you tow vehicles to the shop?","24-hour towing is offered. Call with the pickup location and vehicle details to confirm availability."]]}/><Cta/>
+</Base>

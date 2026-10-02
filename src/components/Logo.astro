@@ -1,0 +1,8 @@
+---
+import { url } from '../lib/path';
+const { large = false } = Astro.props;
+---
+<span class:list={['wordmark', { 'wordmark--large': large }]} aria-label="Flock Built Performance">
+  <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 11h33L26 23h12L9 40l9-15H6z" fill="currentColor"/></svg>
+  <span><b>FLOCK BUILT</b><small>PERFORMANCE</small></span>
+</span>

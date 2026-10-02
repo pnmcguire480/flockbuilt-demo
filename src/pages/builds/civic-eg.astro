@@ -1,0 +1,13 @@
+---
+import { url } from '../../lib/path';
+import Base from '../../layouts/Base.astro';
+import Photo from '../../components/Photo.astro';
+import BeforeAfter from '../../components/BeforeAfter.astro';
+import Cta from '../../components/Cta.astro';
+import site from '../../content/site.json';
+---
+<Base title="Honda Civic EG Build Showcase in Tampa" description="See the red Honda Civic EG from Flock Built Performance: real before and after engine-bay photos and a completed-car showcase." path="/builds/civic-eg/" service="engine-swaps">
+<section class="page-hero section"><div class="breadcrumbs"><a href={url("/")}>Home</a><span>/</span> Civic EG</div><span class="eyebrow">BUILD 001 / FROM THE BAY</span><h1>Honda Civic EG Build<br/>in Tampa, FL</h1><p class="page-display">RED. RAW.<br/><span>FLOCK BUILT.</span></p><p>The red hatch. The stripped bay. The Flock Built valve cover. Real work, shown in real shop photos.</p></section>
+<section class="section build-feature"><BeforeAfter/><div class="build-caption"><span>ENGINE BAY / BEFORE → AFTER</span><span>USE THE SLIDER TO EXPLORE</span></div></section>
+<section class="section two-grid"><Photo kind="exterior" alt="Red Honda Civic EG hatchback, hood open after the build" eager/><div><span class="eyebrow">THE STORY / CLIENT FILL-IN</span><h2>Every build<br/>has a story.</h2><p class="fill-in">{site.civicStory}</p><p>Engine specification, parts list, work completed and owner approval will be added here. Performance figures are not claimed in this demo.</p><a class="text-link" href={url("/repair/engine-swaps/")}>Explore engine & transmission swaps ↗</a></div></section><Cta service="engine-swaps"/>
+</Base>
