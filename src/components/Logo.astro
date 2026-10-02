@@ -1,9 +1,5 @@
 ---
-import { url } from '../lib/path';
 import Badge from './Badge.astro';
 const { large = false } = Astro.props;
 ---
-<span class:list={['wordmark', { 'wordmark--large': large }]} aria-label="Flock Built Performance">
-  <Badge/>
-  <span><b>FLOCK BUILT</b><small>PERFORMANCE</small></span>
-</span>
+<span class:list={['provided-brand',{'provided-brand--large':large}]}><Badge/></span>

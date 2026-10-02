@@ -1,15 +1,9 @@
 ---
+import { url } from '../lib/path';
 const { class: className = '', exploded = false } = Astro.props;
-const chrome = `chrome-${Math.random().toString(36).slice(2)}`;
+const src=url('/brand/flock-built-logo.jpg');
 ---
-<svg class:list={['flock-badge', className]} viewBox="0 0 440 440" role="img" aria-label="Flock Built Performance badge" data-exploded={exploded || undefined}>
- <defs><linearGradient id={chrome} x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".46" stop-color="#ececec"/><stop offset=".48" stop-color="#848484"/><stop offset=".8" stop-color="#ccc"/><stop offset="1" stop-color="#fff"/></linearGradient></defs>
- <g class="badge-wrenches" fill={`url(#${chrome})`} stroke="#080808" stroke-width="8" stroke-linejoin="round">
-  <path d="M57 21l8 43 29 8 23-24-6-38c34 17 41 53 17 78l-29 12 229 221 29-10c35-3 62 23 58 56l-23-31-33 4-13 31 26 32c-37 6-68-18-66-51L77 124l-28-5C14 107 8 72 24 46l8 28 28 7 23-20z"/>
-  <path d="M383 21l-8 43-29 8-23-24 6-38c-34 17-41 53-17 78l29 12L112 321l-29-10c-35-3-62 23-58 56l23-31 33 4 13 31-26 32c37 6 68-18 66-51l229-228 28-5c35-12 41-47 25-73l-8 28-28 7-23-20z"/>
- </g>
- <g class="badge-plate"><path d="M220 29L391 187 353 311 220 422 87 311 49 187Z" fill="#0c0c0c" stroke="#f0f0f0" stroke-width="6"/><path d="M220 43L378 189 341 303 220 405 99 303 62 189Z" fill="#1a1919" stroke="#848484" stroke-width="2"/></g>
- <g class="badge-eagle" fill="#e13543"><path d="M185 77c23-27 68-19 74 11l-18-7 4 20-17 34 1-34-25 34 9-34-39 8 30-28-28 2z"/><path d="M20 188l65-16-7 14-58 16zm0 26 60-14-2 14-58 14zm0 26 65-13 4 14-69 13zm400-80-65 16 7 14 58-16zm0 26-60 14 2 14 58-14zm0 26-65 15-4 14 69-15z"/></g>
- <g class="badge-type" transform="rotate(-8 220 220)"><path d="M36 141h368v166H36z" fill="#080808" stroke="#f0f0f0" stroke-width="4"/><text x="220" y="134" text-anchor="middle" fill="#f0f0f0" class="badge-small">FLOCK BUILT</text><text x="220" y="248" text-anchor="middle" fill={`url(#${chrome})`} stroke="#080808" stroke-width="2" paint-order="stroke" class="badge-name">FLOCK</text><text x="220" y="290" text-anchor="middle" fill="#f0f0f0" class="badge-performance">PERFORMANCE</text><path d="M57 300h326" stroke="#e13543" stroke-width="5"/></g>
- <g transform="translate(220 350)"><g class="badge-gear"><path d="M-9-37h18l4 12 11 5 12-4 9 16-9 9v12l9 9-9 16-12-4-11 5-4 12H-9l-4-12-11-5-12 4-9-16 9-9V1l-9-9 9-16 12 4 11-5z" fill={`url(#${chrome})`} stroke="#080808" stroke-width="4"/><circle r="15" fill="#0c0c0c" stroke="#848484" stroke-width="4"/></g></g>
-</svg>
+{exploded ? <div class:list={['logo-reveal',className]} data-logo-reveal role="img" aria-label="Flock Built Performance supplied logo">
+ <img class="logo-original" src={src} width="1080" height="910" alt=""/>
+ {[0,1,2,3].map(i=><div class={`logo-pixel-layer logo-pixel-layer--${i}`} aria-hidden="true"><img src={src} width="1080" height="910" alt=""/></div>)}
+</div> : <img class:list={['supplied-logo',className]} src={src} width="1080" height="910" alt="Flock Built Performance" decoding="async"/>}

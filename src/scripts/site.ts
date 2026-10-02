@@ -56,14 +56,8 @@ media.add({motion:'(prefers-reduced-motion: no-preference)',desktop:'(min-width:
   ScrollTrigger.create({trigger:statement,start:'top bottom',end:'bottom top',onUpdate:protectActions,onEnter:protectActions,onLeave:protectActions,onLeaveBack:protectActions});
  }
  for(const mark of document.querySelectorAll('.check-mark'))gsap.fromTo(mark,{strokeDashoffset:30},{strokeDashoffset:0,duration:.7,ease:'power1.out',scrollTrigger:{trigger:mark,start:'top 85%',once:true}});
- const badge=document.querySelector('[data-exploded]');
- if(badge){const section=badge.closest('.badge-section');const timeline=gsap.timeline({scrollTrigger:{id:'badge-explode',trigger:section,start:'top 80%',end:'center center',scrub:true}});
-  timeline.fromTo(badge.querySelector('.badge-wrenches'),{y:55,opacity:.3},{y:0,opacity:1,ease:'none'},0)
-   .fromTo(badge.querySelector('.badge-plate'),{scale:.8,transformOrigin:'center',opacity:.4},{scale:1,opacity:1,ease:'none'},0)
-   .fromTo(badge.querySelector('.badge-eagle'),{y:-65,opacity:.3},{y:0,opacity:1,ease:'none'},0)
-   .fromTo(badge.querySelector('.badge-type'),{x:65,opacity:.3},{x:0,opacity:1,ease:'none'},0)
-   .fromTo(badge.querySelector('.badge-gear'),{y:55,opacity:.3},{y:0,opacity:1,ease:'none'},0);
- }
+ const logo=document.querySelector('[data-logo-reveal]');
+ if(logo){const layers=logo.querySelectorAll('.logo-pixel-layer');gsap.fromTo(layers,{xPercent:(i:number)=>i%2?16:-16,yPercent:(i:number)=>(i-1.5)*8,opacity:.45},{xPercent:0,yPercent:0,opacity:1,ease:'none',scrollTrigger:{id:'logo-assemble',trigger:logo.closest('.badge-section'),start:'top 80%',end:'center center',scrub:true}});}
  gsap.to('.tire-rail span',{scaleY:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:true}});
  let frame=0;
  const cells=[...document.querySelectorAll<SVGPathElement>('.hero-stage .hex-cell')];
