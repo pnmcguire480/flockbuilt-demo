@@ -2,7 +2,7 @@
 import { url } from '../lib/path';
 import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
-import Logo from '../components/Logo.astro';
+import Badge from '../components/Badge.astro';
 import ShopFacts from '../components/ShopFacts.astro';
 import Cta from '../components/Cta.astro';
 import site from '../content/site.json';
@@ -11,5 +11,5 @@ import site from '../content/site.json';
 <section class="page-hero section"><div class="breadcrumbs"><a href={url("/")}>Home</a><span>/</span>The crew</div><span class="eyebrow">THE PEOPLE / THE SHOP / THE WORK</span><h1>The Flock Built Performance<br/>Crew in Tampa</h1><p class="page-display">BUILT ON TRUST.<br/><span>DRIVEN BY PERFORMANCE.</span></p></section>
 <section class="section crew-preview"><Photo kind="shop" alt="Flock beneath the shop banner and hexagonal workshop lights" eager/><div><span class="eyebrow">FROM OUR BAY TO YOUR RIDE</span><h2>“I’m here to<br/>fix your problem.”</h2><p>A line from the shop’s own flyer. Auto and diesel repair, swaps and hauling, with a free estimate to start the conversation.</p><p class="fill-in">{site.ownerStory}</p></div></section>
 <section class="section two-grid crew-cards"><article class="spec-card"><span class="eyebrow">01 / OWNER</span><h2>Flock</h2><p>Owner of Flock Built Performance.</p><p class="fill-in">Client fill-in: approved story and portrait.</p></article><article class="spec-card"><span class="eyebrow">02 / LEAD MECHANIC</span><h2>Jean Carlos</h2><p>The lead mechanic and main person customers deal with at the shop.</p><p class="fill-in">{site.jeanBio}</p></article></section>
-<section class="section badge-section"><Logo large/><div><span class="eyebrow">THE IDENTITY</span><h2>Flock Built.<br/>Through and through.</h2><p class="fill-in">Demo wordmark. The final badge rebuild and crew portraits await client approval.</p><p>Repair registration: <span class="fill-in">{site.fdacsMv}</span></p><p>Transport registration: <span class="fill-in">{site.usdot}</span></p></div></section><ShopFacts/><Cta/>
+<section class="section badge-section"><div class="exploded-badge"><Badge exploded/></div><div><span class="eyebrow">THE IDENTITY</span><h2>Flock Built.<br/>Through and through.</h2><p class="fill-in">Layered badge study rebuilt from the supplied Flock Built artwork. Final vector approval and crew portraits remain client review items.</p><p>Repair registration: <span class="fill-in">{site.fdacsMv}</span></p><p>Transport registration: <span class="fill-in">{site.usdot}</span></p></div></section><ShopFacts/><Cta/>
 </Base>
